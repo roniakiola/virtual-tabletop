@@ -1,10 +1,11 @@
 import express from 'express';
+import { AppDataSource } from './infrastructure/database';
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = 3001;
 
-app.get('/', (req, res) => {
-  res.send('Ayyy lmaoasd');
+AppDataSource.initialize().then(() => {
+  console.log('Database connection successful');
 });
 
 app.listen(port, () => {

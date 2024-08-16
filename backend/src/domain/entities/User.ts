@@ -1,8 +1,7 @@
-export interface User {
-  id: number;
+import { BaseEntity } from './BaseEntity';
+
+export interface User extends BaseEntity {
   username: string;
   email: string;
   password: string;
-  createdAt: Date;
-  updatedAt: Date;
 }

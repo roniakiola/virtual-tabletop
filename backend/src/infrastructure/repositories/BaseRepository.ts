@@ -1,7 +1,7 @@
 import { FindOptionsWhere, ObjectLiteral, Repository } from 'typeorm';
 import { IBaseRepository } from '../../domain/abstraction/repositories/IBaseRepository';
 
-export class BaseRepository<T extends ObjectLiteral>
+export abstract class BaseRepository<T extends ObjectLiteral>
   implements IBaseRepository<T>
 {
   constructor(private readonly repository: Repository<T>) {}

@@ -7,7 +7,7 @@ export class UserRepository
   extends BaseRepository<User>
   implements IUserRepository
 {
-  constructor(private userRepository: Repository<User>) {
+  constructor(private readonly userRepository: Repository<User>) {
     super(userRepository);
   }
 }

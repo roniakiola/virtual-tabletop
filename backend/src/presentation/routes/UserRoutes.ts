@@ -4,11 +4,13 @@ import { AppDataSource } from '../../infrastructure/database';
 import { UserRepository } from '../../infrastructure/repositories/UserRepository';
 import { UserController } from '../controllers/UserController';
 import { UserModel } from '../../infrastructure/models/UserModel';
+import { IUserRepository } from '../../domain/abstractions/repositories/IUserRepository';
+import { IUserService } from '../../application/services/abstractions/IUserService';
 
-const userRepository = new UserRepository(
+const userRepository: IUserRepository = new UserRepository(
   AppDataSource.getRepository(UserModel)
 );
-const userService = new UserService(userRepository);
+const userService: IUserService = new UserService(userRepository);
 const userController = new UserController(userService);
 
 const userRouter = Router();

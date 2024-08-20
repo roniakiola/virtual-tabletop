@@ -4,7 +4,7 @@ import { IUserService } from '../abstractions/IUserService';
 import { BaseService } from './BaseService';
 
 export class UserService extends BaseService<User> implements IUserService {
-  constructor(repository: IUserRepository) {
-    super(repository);
+  constructor(private readonly userRepository: IUserRepository) {
+    super(userRepository);
   }
 }

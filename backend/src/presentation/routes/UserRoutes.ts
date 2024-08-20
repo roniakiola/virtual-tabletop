@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { UserService } from '../../application/services/UserService';
+import { UserService } from '../../application/services/implementations/UserService';
 import { AppDataSource } from '../../infrastructure/database';
 import { UserRepository } from '../../infrastructure/repositories/UserRepository';
 import { UserController } from '../controllers/UserController';

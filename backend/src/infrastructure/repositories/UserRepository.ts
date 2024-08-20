@@ -1,5 +1,5 @@
 import { Repository } from 'typeorm';
-import { IUserRepository } from '../../domain/abstraction/repositories/IUserRepository';
+import { IUserRepository } from '../../domain/abstractions/repositories/IUserRepository';
 import { User } from '../../domain/entities/User';
 import { BaseRepository } from './BaseRepository';
 

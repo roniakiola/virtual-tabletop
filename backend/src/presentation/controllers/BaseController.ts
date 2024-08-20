@@ -1,4 +1,4 @@
-import { BaseService } from '../../application/services/BaseService';
+import { BaseService } from '../../application/services/implementations/BaseService';
 import { Request, Response } from 'express';
 
 export abstract class BaseController<T> {

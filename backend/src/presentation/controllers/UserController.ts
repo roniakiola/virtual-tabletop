@@ -1,5 +1,5 @@
 import { User } from '../../domain/entities/User';
-import { UserService } from '../../application/services/UserService';
+import { UserService } from '../../application/services/implementations/UserService';
 import { BaseController } from './BaseController';
 
 export class UserController extends BaseController<User> {

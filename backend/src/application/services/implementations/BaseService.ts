@@ -1,6 +1,7 @@
-import { IBaseRepository } from '../../domain/abstraction/repositories/IBaseRepository';
+import { IBaseRepository } from '../../../domain/abstractions/repositories/IBaseRepository';
+import { IBaseService } from '../abstractions/IBaseService';
 
-export abstract class BaseService<T> {
+export abstract class BaseService<T> implements IBaseService<T> {
   constructor(private readonly baseRepository: IBaseRepository<T>) {}
 
   public async createNew(data: T): Promise<T> {

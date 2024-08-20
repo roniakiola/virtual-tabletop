@@ -1,5 +1,5 @@
 import { FindOptionsWhere, ObjectLiteral, Repository } from 'typeorm';
-import { IBaseRepository } from '../../domain/abstraction/repositories/IBaseRepository';
+import { IBaseRepository } from '../../domain/abstractions/repositories/IBaseRepository';
 
 export abstract class BaseRepository<T extends ObjectLiteral>
   implements IBaseRepository<T>

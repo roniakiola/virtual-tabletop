@@ -1,8 +1,8 @@
-import { BaseService } from '../../application/services/implementations/BaseService';
+import { IBaseService } from '../../application/services/abstractions/IBaseService';
 import { Request, Response } from 'express';
 
 export abstract class BaseController<T> {
-  constructor(private readonly service: BaseService<T>) {}
+  constructor(private readonly service: IBaseService<T>) {}
 
   public async createNew(req: Request, res: Response): Promise<Response> {
     console.log(req.body);

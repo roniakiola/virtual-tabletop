@@ -10,4 +10,7 @@ export class UserRepository
   constructor(private readonly userRepository: Repository<User>) {
     super(userRepository);
   }
+  public async getByUsername(username: string): Promise<User | null> {
+    return await this.userRepository.findOneBy({ username });
+  }
 }

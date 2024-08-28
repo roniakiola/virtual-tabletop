@@ -5,12 +5,11 @@ export abstract class BaseController<T> {
   constructor(private readonly service: IBaseService<T>) {}
 
   public async createNew(req: Request, res: Response): Promise<Response> {
-    console.log(req.body);
     try {
       const entity = await this.service.createNew(req.body);
       return res.status(201).json(entity);
     } catch (error) {
-      return res.status(400).json({ error: 'error happened' });
+      return res.status(400).json({ error: 'creation error' });
     }
   }
   public async getById(req: Request, res: Response): Promise<Response> {
@@ -20,7 +19,7 @@ export abstract class BaseController<T> {
       if (!entity) return res.status(404).json({ message: 'Not found' });
       return res.status(200).json(entity);
     } catch (error) {
-      return res.status(400).json({ error: 'asd' });
+      return res.status(400).json({ error: 'error fetching' });
     }
   }
 
@@ -29,7 +28,7 @@ export abstract class BaseController<T> {
       const entities = await this.service.getAll();
       return res.status(200).json(entities);
     } catch (error) {
-      return res.status(400).json({ error: 'error.message' });
+      return res.status(400).json({ error: 'error fetching' });
     }
   }
 
@@ -40,7 +39,7 @@ export abstract class BaseController<T> {
       if (!updatedEntity) return res.status(404).json({ message: 'Not found' });
       return res.status(200).json(updatedEntity);
     } catch (error) {
-      return res.status(400).json({ error: 'error.message' });
+      return res.status(400).json({ error: 'error updating' });
     }
   }
 
@@ -50,7 +49,7 @@ export abstract class BaseController<T> {
       await this.service.delete(id);
       return res.status(204).send();
     } catch (error) {
-      return res.status(400).json({ error: 'error.message' });
+      return res.status(400).json({ error: 'error deleting' });
     }
   }
 }

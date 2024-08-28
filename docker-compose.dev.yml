@@ -23,6 +23,8 @@ services:
     depends_on:
       - postgres
       - redis
+    env_file:
+      - .env
 
   frontend:
     build:

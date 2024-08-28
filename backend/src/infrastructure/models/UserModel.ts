@@ -4,10 +4,10 @@ import { BaseModel } from './BaseModel';
 
 @Entity({ name: 'users' })
 export class UserModel extends BaseModel implements User {
-  @Column()
+  @Column({ unique: true })
   username!: string;
 
-  @Column()
+  @Column({ unique: true })
   email!: string;
 
   @Column()

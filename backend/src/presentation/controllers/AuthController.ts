@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 
 export class AuthController {
   constructor(private readonly authService: IAuthService) {}
+
   public async login(req: Request, res: Response): Promise<Response> {
     const { username, password } = req.body;
     try {

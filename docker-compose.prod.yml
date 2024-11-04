@@ -18,6 +18,8 @@ services:
     depends_on:
       - postgres
       - redis
+    env_file:
+      - .env
 
   frontend:
     build:
@@ -28,7 +30,7 @@ services:
       - '3000:3000'
 
   postgres:
-    image: postgres:16
+    image: postgres:17-alpine
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -39,7 +41,7 @@ services:
       - '5432:5432'
 
   redis:
-    image: redis:7
+    image: redis:7-alpine
     ports:
       - '6379:6379'
 

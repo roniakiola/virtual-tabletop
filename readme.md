@@ -50,8 +50,8 @@ This is a list of planned features and functionalities split into Core Features 
 
 ### Backend
 
-- Node.js
-- Express.js
+- NestJS (Node.js)
+- TypeORM
 - TypeScript
 - PostgreSQL
 - Redis

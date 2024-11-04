@@ -1,4 +1,4 @@
-FROM node:20.15.1-bookworm-slim as base
+FROM node:18-alpine as base
 WORKDIR /usr/src/app
 COPY package*.json .
 
@@ -11,7 +11,7 @@ CMD ["npm", "run", "dev"]
 FROM dev as builder
 RUN npm run build
 
-FROM nginx:1.27.0-bookworm as prod
+FROM nginx:1.27.0-alpine as prod
 COPY --from=builder /usr/src/app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 3000

@@ -13,8 +13,7 @@ export class UserService {
   ) {}
 
   async create(userCreateDto: UserCreateDto): Promise<UserReadDto> {
-    const user = this.userRepository.save(userCreateDto);
-    console.log(user);
+    const user = await this.userRepository.save(userCreateDto);
     return user;
   }
 
